@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-07-08T18:18:45.185Z",
+    "end": "2022-07-08T18:19:02.760Z",
+    "duration": 17575,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b0353a50-30a9-4ade-8104-ad909c79fcd7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\3-alurapic\\alurapic.cy.js",
+      "file": "cypress\\e2e\\3-alurapic\\alurapic.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "23702405-12f7-46a1-b73e-7f050658a427",
+          "title": "Login e registro de usuario alurapic",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar mensagens validacao",
+              "fullTitle": "Login e registro de usuario alurapic Verificar mensagens validacao",
+              "timedOut": null,
+              "duration": 7609,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.contains('ap-vmessage', 'Email is required!').should('be.visible');\ncy.contains('button', 'Register').click();\ncy.contains('ap-vmessage', 'Full name is required!').should('be.visible');\ncy.contains('ap-vmessage', 'User is required!').should('be.visible');\ncy.contains('ap-vmessage', 'Password is required!').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User is required!' within the selector: 'ap-vmessage' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User is required!' within the selector: 'ap-vmessage' but never did.\n    at Context.eval (http://alura-fotos.herokuapp.com/__cypress/tests?p=cypress\\e2e\\3-alurapic\\alurapic.cy.js:109:53)",
+                "diff": null
+              },
+              "uuid": "a0201739-cd66-40fe-86b3-1cdbb1cf589a",
+              "parentUUID": "23702405-12f7-46a1-b73e-7f050658a427",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar mensagens de email invalido",
+              "fullTitle": "Login e registro de usuario alurapic Verificar mensagens de email invalido",
+              "timedOut": null,
+              "duration": 3111,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.get('input[formcontrolname=\"email\"]').type('rodrigo');\ncy.contains('ap-vmessage', 'Invalid e-mail').should('be.visible');",
+              "err": {},
+              "uuid": "8ec7c77a-b43a-4422-8d03-222c668c98cc",
+              "parentUUID": "23702405-12f7-46a1-b73e-7f050658a427",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificar mensagens de senha com menos caracters",
+              "fullTitle": "Login e registro de usuario alurapic Verificar mensagens de senha com menos caracters",
+              "timedOut": null,
+              "duration": 2682,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.get('input[formcontrolname=\"password\"]').type('123');\ncy.contains('button', 'Register').click();\ncy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');",
+              "err": {},
+              "uuid": "fd00da96-3d60-4c21-9dc1-e9bce4f4a6b9",
+              "parentUUID": "23702405-12f7-46a1-b73e-7f050658a427",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8ec7c77a-b43a-4422-8d03-222c668c98cc",
+            "fd00da96-3d60-4c21-9dc1-e9bce4f4a6b9"
+          ],
+          "failures": [
+            "a0201739-cd66-40fe-86b3-1cdbb1cf589a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13402,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
